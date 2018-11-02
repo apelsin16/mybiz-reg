@@ -1,0 +1,10 @@
+.button-fop {
+    border: none;
+    background-color: #fff;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-left: calc(50px + 2rem);
+    
+}
