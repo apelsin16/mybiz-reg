@@ -1,0 +1,15 @@
+.input {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 2px #6b6b6b solid;
+  border-radius: 25px;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-style: italic;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}

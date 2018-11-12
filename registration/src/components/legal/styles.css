@@ -1,0 +1,21 @@
+.legal__menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.menu__link {
+  display: block;
+  background-color: #dee1e6;
+  padding: 0.2rem 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.menu__link--active {
+  background-color: #b4b7bc;
+  color: #cccdcf;
+}

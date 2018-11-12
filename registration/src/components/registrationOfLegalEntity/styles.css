@@ -1,41 +1,39 @@
 .wrapper {
-    /* display: flex; */
-
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .button-legal {
-    border: 2px solid #a7dbe5;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    color: #a7dbe5;
-    font-size: 2rem;
-    background-color: #fff;
+  border: 2px solid #a7dbe5;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #a7dbe5;
+  font-size: 2rem;
+  background-color: #fff;
 }
 
 .button-wrapper {
-    display: flex;
+  display: flex;
 }
 
 .body-button {
-    border: none;
-    background-color: #fff;
-    font-style: italic;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    margin-left: calc( 50px + 2rem );
+  border: none;
+  background-color: #fff;
+  font-style: italic;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  margin-left: calc(50px + 2rem);
 }
 
 .title-legal {
-    margin: 0;
-    margin-left: 1rem;
-    /* vertical-align: middle; */
-    
+  margin: 0;
+  margin-left: 1rem;
 }
 
 .flag {
-    font-size: 2rem;
-    color: #a7dbe5;
-    font-weight: bold;
+  display: inline;
+  font-size: 2rem;
+  color: #a7dbe5;
+  font-weight: bold;
+  margin-left: 1rem;
 }

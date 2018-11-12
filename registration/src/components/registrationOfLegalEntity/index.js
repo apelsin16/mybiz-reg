@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 import './styles.css';
 
 export default class RegistrationOfLegalEntity extends Component {
@@ -16,10 +17,10 @@ export default class RegistrationOfLegalEntity extends Component {
 
     render () {
         console.log(this.props);
-        const { onButtonClick, onIsRegistrationOfLegalEntity } = this.props;
+        const { onButtonClick, onIsOpenLegal, onIsOpenPrivat } = this.props;
         const body = this.state.isOpen && <button className="body-button" onClick={ onButtonClick }>Реєстрація Товариства з обмеженою відповідальністю</button>;
         
-        const flag = onIsRegistrationOfLegalEntity && <p className='flag'>V</p>;
+        const flag = (this.state.isOpen && (onIsOpenLegal && !onIsOpenPrivat)) && <p className='flag'>V</p>;
         return (
             <div className="wrapper">
                 <div className="button-wrapper">
@@ -30,6 +31,7 @@ export default class RegistrationOfLegalEntity extends Component {
                 </div>
                 
                 <div>
+               
                     { flag } 
                     { body }     
                 </div>
