@@ -31,5 +31,6 @@
   ],
   "devDependencies": {
     "redux-devtools": "^3.4.1"
-  }
+  },
+  "homepage": "https://apelsin16.github.io/mybiz-reg/registration/build"
 }
