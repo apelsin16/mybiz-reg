@@ -9,7 +9,7 @@ import App from './App';
 
 ReactDOM.render(
 
-        <BrowserRouter basename="/registration/build">
+        <BrowserRouter basename="/mybiz-reg/registration/build">
             <App />
         </BrowserRouter>
 
