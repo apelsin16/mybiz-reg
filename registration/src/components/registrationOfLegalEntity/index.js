@@ -7,20 +7,20 @@ export default class RegistrationOfLegalEntity extends Component {
 
     state = {
         isOpen: false
-    }
+    };
 
     handleClick = () => {
         this.setState({
             isOpen: !this.state.isOpen
         })
-    }
+    };
 
     render () {
         console.log(this.props);
         const { onButtonClick, onIsOpenLegal, onIsOpenPrivat } = this.props;
         const body = this.state.isOpen && <button className="body-button" onClick={ onButtonClick }>Реєстрація Товариства з обмеженою відповідальністю</button>;
         
-        const flag = (this.state.isOpen && (onIsOpenLegal && !onIsOpenPrivat)) && <p className='flag'>V</p>;
+        const flag = (this.state.isOpen && (onIsOpenLegal && !onIsOpenPrivat)) && <p className='flag'>&#709;</p>;
         return (
             <div className="wrapper">
                 <div className="button-wrapper">
@@ -30,7 +30,7 @@ export default class RegistrationOfLegalEntity extends Component {
                 <h3 className="title-legal">Реєстрація юридичних осіб</h3>
                 </div>
                 
-                <div>
+                <div className="wrap">
                
                     { flag } 
                     { body }     

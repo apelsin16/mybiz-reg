@@ -7,7 +7,7 @@ import './styles.css';
 const INITIAL_STATE = {
     isOpenLegal: false,
     isOpenPrivat: false
-}
+};
 
 export default class Main extends Component {
 
@@ -16,14 +16,15 @@ export default class Main extends Component {
     handleClickLegal = () => this.setState({ 
         isOpenLegal: !this.state.isOpenLegal,
         isOpenPrivat: (true ? false : false)
-        })
+        });
     handleClickPrivat = () => this.setState({ 
         isOpenPrivat: !this.state.isOpenPrivat,
         isOpenLegal: (true ? false : false)  
-    })
+    });
 
     render () {
-        const { isOpenLegal, isOpenPrivat } = this.state;
+
+      const { isOpenLegal, isOpenPrivat } = this.state;
         return (
         <div className="container">           
             <aside className="aside">
@@ -32,6 +33,7 @@ export default class Main extends Component {
                     onIsOpenLegal={isOpenLegal}
                     onButtonClick = {this.handleClickLegal.bind(this)}
                     onIsOpenPrivat={isOpenPrivat}
+                    {...this.props}
                     />
 
                     <RegistrationOfPrivatEnterpreneur 
@@ -45,7 +47,7 @@ export default class Main extends Component {
                 <p className="main-text">В цьому розділі Ви можете сформувати всі необхідні документи для державної реєстрації юридичної 
                     особи та фізичної особи-підприємця, а також провести електронну реєстрацію ТОВ або ФОП</p> :
                     (this.state.isOpenLegal && !this.state.isOpenPrivat) ? 
-                    <Legal/> : 
+                    <Legal {...this.props}/> :
                     <p className="main-text">Реєстрація ФОП</p>
             }            
             </main>

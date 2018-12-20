@@ -23,7 +23,8 @@
   font-weight: 700;
   font-style: italic;
   border-radius: 25px;
-  padding: 0 2rem;  
+  padding: 0 2rem;
+  margin-left: 10px;
 }
 
 .wrapper__main {

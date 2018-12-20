@@ -1,11 +1,33 @@
 import React, { Component } from 'react';
 import Input from '../../shared/input';
+
 import './styles.css';
 
-export default class Step1 extends Component {
+class Step1 extends Component {
   state = {
-    text: this.props.text
+        "UPF":"Товариство з обмеженою відповідальністю",    
+        "TOVDOCTYPE":true,    
+        "TOVSUPREME":false,
+        "TOVCORP":"",    
+        "TOVAPTNUM":"",    
+        "TOVAPTTYPE":"",    
+        "TOVPOSTCODE":"",    
+        "TOVREGION":"",    
+        "TOVDISTRICT":"",    
+        "TOVCITYTYPE":"",    
+        "TOVCITY":"Місто",    
+        "TOVCITYDISTRICT":"",    
+        "TOVSTREET":"",    
+        "TOVBUILD":"",    
+        "TOV_NAME":"",    
+        "TOV_NAME_RU":"",    
+        "TOV_NAME_EN":"",    
+        "TOV_SHORT":"",    
+        "TOV_SHORT_RU":"checked",    
+        "TOV_SHORT_EN":"",    
+        "CITY":""
   };
+
 
   handleInputChange = e => {
     const name = e.target.name;
@@ -16,16 +38,69 @@ export default class Step1 extends Component {
     });
   };
 
-  handleEditSuccess = e => {
-    e.preventDefault();
+  radioButtonChange = () => {};
 
-    this.props.onEditSuccess(this.state.text);
-  }; 
-  
+
+  handleSaveDraft = e => {
+    e.preventDefault();
+    console.log(this.props);
+    const { TOVDOCTYPE,
+      TOVSUPREME,
+      SIMPLTAX,
+      VAT,
+      TOTAL_UAH,
+      TOTAL_UAH_STRING,
+      TOVCORP,
+      TOVAPTNUM,
+      TOVAPTTYPE,
+      TOVPOSTCODE,
+      TOVREGION,
+      TOVDISTRICT,
+      TOVCITYTYPE,
+      TOVCITY,
+      TOVCITYDISTRICT,
+      TOVSTREET,
+      TOVBUILD,
+      TOV_NAME,
+      TOV_NAME_RU,
+      TOV_NAME_EN,
+      TOV_SHORT,
+      TOV_SHORT_RU,
+      TOV_SHORT_EN,
+      CITY} = this.state;
+    this.props.onSaveDraftStepOne({
+      TOVDOCTYPE,
+      TOVSUPREME,
+      SIMPLTAX,
+      VAT,
+      TOTAL_UAH,
+      TOTAL_UAH_STRING,
+      TOVCORP,
+      TOVAPTNUM,
+      TOVAPTTYPE,
+      TOVPOSTCODE,
+      TOVREGION,
+      TOVDISTRICT,
+      TOVCITYTYPE,
+      TOVCITY,
+      TOVCITYDISTRICT,
+      TOVSTREET,
+      TOVBUILD,
+      TOV_NAME,
+      TOV_NAME_RU,
+      TOV_NAME_EN,
+      TOV_SHORT,
+      TOV_SHORT_RU,
+      TOV_SHORT_EN,
+      CITY
+    })
+  };
+
   render () {
+    console.log(this.props);
     const { text } = this.state;
     return (
-        <form onSubmit={this.handleEditSuccess}>
+        <form onSubmit={ e => this.handleSubmit(e, this.state)}>
             <div className='row__wrapper'>
                 <p className="input__title">Назва:</p>
                 <Input
@@ -45,6 +120,8 @@ export default class Step1 extends Component {
             </div>
             <div className='row__wrapper'>
                 <p className="input__title">Адреса:</p>
+            </div>
+          <div className='row__wrapper'>
                 <Input
                     name = "TOVPOSTCODE"
                     onChange = {this.handleInputChange}
@@ -65,7 +142,6 @@ export default class Step1 extends Component {
                 />
             </div>
             <div className='row__wrapper'>
-                <p className="input__title">Адреса:</p>
                 <Input
                     name = "TOVCITYDISTRICT"
                     onChange = {this.handleInputChange}
@@ -122,10 +198,10 @@ export default class Step1 extends Component {
             <div>
                 <p className="input__title">Спосіб отримання виписки з Єдиного державного реєстру юридичних осіб та фізичних осіб-підприємців:</p>
                 <div className='row__wrapper'>
-                    <input type='radio' name="Method of receipt" id="TOV_NAME_RU"/>
+                    <input type='radio' name="Method of receipt" id="TOV_NAME_RU" onClick={this.radioButtonChange}/>
                     <label className="label" htmlFor="TOV_NAME_RU"><span><span></span></span>Видати заявнику</label>
                     
-                    <input type='radio' name="Method of receipt" id="TOV_SHORT_RU" checked="checked"/>
+                    <input type='radio' name="Method of receipt" id="TOV_SHORT_RU" onClick={this.radioButtonChange}/>
                     <label className="label" htmlFor="TOV_SHORT_RU"><span><span></span></span>Відправити поштою за місцезнаходженням юридичної особи</label>  
                 </div>
             </div>
@@ -145,11 +221,20 @@ export default class Step1 extends Component {
                 />
             </div>
             <div className='row__wrapper--end'>
-                <input type="submit" className="submit" value="Зберегти чернетку" />
+                <button className="submit" onClick={e => this.handleSaveDraft(e)}>Зберегти чернетку</button>
+                
             </div>
+
         </form>
     )  
   }
-  
+}
 
-};
+
+
+// const mDTP = dispatch => ({
+//   add: (text) => dispatch(add(text))
+// });
+
+export default Step1;
+
